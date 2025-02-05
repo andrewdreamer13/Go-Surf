@@ -36,9 +36,15 @@ const headerSlider = new Swiper(".header__slider", {
 });
 
 const mapNorth = document.querySelector(".map-north");
+const navItems = document.querySelectorAll('.nav__item');
 
 window.addEventListener("load", () => {
   mapNorth.classList.add("map-visible");
+
+  navItems.forEach((item) => {
+    item.classList.add('nav__item-active')
+  })
+
 });
 
 // headerSlider.on("paginationRender", function () {
@@ -67,24 +73,19 @@ function burger() {
   const menu = document.querySelector(".header__aside");
   const navItems = document.querySelectorAll(".nav__item");
   const navLinks = document.querySelectorAll(".nav__link");
+  const searchBtn = document.querySelector('.header__search');
 
   //open menu
 
   burgerBtn.addEventListener("click", () => {
     menu.classList.toggle("un-translate");
     burgerBtn.classList.toggle("burger-active");
-    document
-      .querySelector(".burger__span-one")
-      .classList.toggle("span-one-transform");
-    document
-      .querySelector(".burger__span-two")
-      .classList.toggle("span-two-transform");
-    document
-      .querySelector(".burger__span-three")
-      .classList.toggle("span-three-transform");
+    document.querySelector(".burger__span-one").classList.toggle("span-one-transform");
+    document.querySelector(".burger__span-two").classList.toggle("span-two-transform");
+    document.querySelector(".burger__span-three").classList.toggle("span-three-transform");
     document.body.classList.toggle("no-scroll");
     navItems.forEach((item) => {
-      item.classList.toggle("nav__item--animate");
+      item.classList.toggle("nav__item-translate");
     });
   });
 
@@ -93,20 +94,29 @@ function burger() {
   navLinks.forEach((link) => {
     link.addEventListener("click", function () {
       navItems.forEach((item) => {
-        item.classList.remove("nav__item--animate");
+        item.classList.remove("nav__item-translate");
       });
       menu.classList.remove("un-translate");
       burgerBtn.classList.remove("burger-active");
-      document
-        .querySelector(".burger__span-one")
-        .classList.remove("span-one-transform");
-      document
-        .querySelector(".burger__span-two")
-        .classList.remove("span-two-transform");
-      document
-        .querySelector(".burger__span-three")
-        .classList.remove("span-three-transform");
+      document.querySelector(".burger__span-one").classList.remove("span-one-transform");
+      document.querySelector(".burger__span-two").classList.remove("span-two-transform");
+      document.querySelector(".burger__span-three").classList.remove("span-three-transform");
       document.querySelector("body").classList.remove("no-scroll");
     });
   });
+
+    window.addEventListener('click', (event) => {
+      if (menu.classList.contains('un-translate') && !burgerBtn.contains(event.target) && !searchBtn.contains(event.target)) {
+        navItems.forEach((item) => {
+          item.classList.remove("nav__item-translate");
+        });
+        menu.classList.remove("un-translate");
+        burgerBtn.classList.remove("burger-active");
+        document.querySelector(".burger__span-one").classList.remove("span-one-transform");
+        document.querySelector(".burger__span-two").classList.remove("span-two-transform");
+        document.querySelector(".burger__span-three").classList.remove("span-three-transform");
+        document.body.classList.remove("no-scroll");
+
+      }
+    });   
 } // End of burger

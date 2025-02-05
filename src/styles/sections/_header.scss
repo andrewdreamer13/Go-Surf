@@ -69,7 +69,8 @@
 
   &__slide-subtitle {
     margin-bottom: 10px;
-    font-size: clamp(16px, 0.8235rem + 0.8824vw, 22px);
+    letter-spacing: 15px;
+     opacity: 0;
   }
 
   &__slide-title {
@@ -78,6 +79,8 @@
     line-height: 1.1;
     text-transform: uppercase;
     margin-bottom: 27px;
+    scale:2;
+    opacity: 0;
   }
 
   &__slide-subtext {
@@ -87,6 +90,9 @@
   &__slide-text {
     font-size: clamp(24px, 1.1735rem + 1.6327vw, 40px);
     margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: 10px;
+    opacity: 0;
   }
 
   &__slide-link {
@@ -107,6 +113,136 @@
     height: 20px;
     fill: $text-color;
   }
+
+  &__slider {
+    .swiper-slide {
+      &-active {
+        .header__slide-content {
+          .header__slide-title {
+            transition: all .6s;
+             scale:1;
+             opacity: 1;
+           }
+   
+           .header__slide-subtitle {
+             transition: all .5s;
+             transition-delay: .4s ;
+             letter-spacing: clamp(2px, 0.0298rem + 0.4759vw, 7.33px);
+             opacity: 1;
+             translate: 0 0 0;
+            }
+
+           .header__slide-text {
+            transition: all .5s;
+            transition-delay: .2s ;
+            letter-spacing: 0;
+            opacity: 1;
+          }
+
+          .header__slide-link {
+            animation-name: move-link;
+            animation-duration: .7s;
+            animation-delay: .4s;
+            animation-iteration-count: 1;
+            animation-timing-function:ease-in-out;
+          }
+        }
+        
+      }
+    }
+  }
+
+  @keyframes move-link {
+    0% {
+      translate: -15 0 0;
+    }
+    25% {
+      translate: 15px 0 0;
+    }
+    50% {
+      translate: -10px 0 0;
+    }
+    75% {
+      translate: 5px 0 0;
+    }
+    100% {
+      translate: 0 0 0;
+    }
+  }
+
+  // @keyframes move-link {
+  //   0% {
+  //     transform: translate(0, 0);
+  //     opacity: 0;
+  //   }
+  //   10% {
+  //     transform: translate(30px, 0);
+  //     opacity: 1;
+  //   }
+  //   20% {
+  //     transform: translate(-30px, 0);
+  //     opacity: 1;
+  //   }
+  //   30% {
+  //     transform: translate(25px, 0);
+  //     opacity: 1;
+  //   }
+  //   40% {
+  //     transform: translate(-25px, 0);
+  //     opacity: 1;
+  //   }
+  //   50% {
+  //     transform: translate(20px, 0);
+  //     opacity: 1;
+  //   }
+  //   60% {
+  //     transform: translate(-20px, 0);
+  //     opacity: 1;
+  //   }
+  //   70% {
+  //     transform: translate(15px, 0);
+  //     opacity: 1;
+  //   }
+  //   80% {
+  //     transform: translate(-15px, 0);
+  //     opacity: 1;
+  //   }
+  //   90% {
+  //     transform: translate(5px, 0);
+  //     opacity: 1;
+  //   }
+  //   100% {
+  //     transform: translate(0, 0);
+  //     opacity: 1;
+  //   }
+  // }
+  
+  
+  
+
+  // @keyframes move-link {
+  //   0% {
+  //     transform: translate(0, 0);
+  //     opacity: 0;
+  //   }
+  //   20% {
+  //     transform: translate(20px, 0);
+  //     opacity: 1;
+  //   }
+  //   50% {
+  //     transform: translate(-30px, 0);
+  //     opacity: 1;
+  //   }
+  //   80% {
+  //     transform: translate(20px, 0);
+  //     opacity: 1;
+  //   }
+  //   100% {
+  //     transform: translate(0, 0);
+  //     opacity: 1;
+  //   }
+  // }
+
 
   &__slider-control {
     position: absolute;
@@ -325,7 +461,6 @@
 
   &__place {
     width: 100%;
-    // margin-bottom: 40px;
     @include flex-mix(center, center, row, 9);
   }
 
@@ -400,8 +535,6 @@
     transition: all 1s linear;
     stroke-dashoffset: 600;
     stroke-dasharray: 600;
-    &-active {
-    }
   }
 }
 .road-north {
@@ -667,7 +800,18 @@
       translate: 0 -100% 0;
       backdrop-filter: blur(3px);
       transition: translate 0.5s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: calc(-100vw + 85px);
+        width: calc(100vw - 85px);
+        height: 100%;
+        background-color: transparent;
+      }
     }
+
 
     &__slide-map {
       transform: translate(27%, -105%);

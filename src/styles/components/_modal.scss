@@ -33,16 +33,35 @@
   }
 
   &__text {
-    font-size: 100px;
     font-size: clamp(22px, -0.3977rem + 8.8636vw, 100px);
     letter-spacing: 3px;
     font-weight: 800;
+    animation: rubber-band 2s ease infinite  ;
   }
 }
 
+@keyframes rubber-band {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  30% {
+    transform: scale3d(1.25, .75, 1);
+  }
+  40% {
+    transform: scale3d(.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, .85, 1);
+  }
+  65% {
+    transform: scale3d(1.05, .95, 1);
+  }
 
-
+}
 
 .visible {
   display:flex;
 }
+
+
+

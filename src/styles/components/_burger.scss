@@ -10,9 +10,8 @@
   z-index: 10;
   cursor: pointer;
   transition: all 0.5s;
+  
   &-active {
-    // top:auto;
-    // bottom: 34px;
     transform:translateY(calc(100dvh - 80px));
     transition: all 0.5s;
   }

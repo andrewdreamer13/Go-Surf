@@ -367,7 +367,13 @@
   }
 }
 
-
+@media (min-width:1440px) {
+  .shop {
+    &__inner {
+      background-size: contain;
+    }
+  }
+}
 
 
 @media (max-width: 1200px) {

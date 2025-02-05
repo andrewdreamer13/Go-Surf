@@ -75,8 +75,8 @@ body{
   display: inline-block;
   position: relative;
   font-weight: 400;
-  font-size: clamp(12px, 0.5714rem + 0.8929vw, 22px);
   line-height: 1.7;
+  font-size: clamp(16px, 0.8235rem + 0.8824vw, 22px);
   letter-spacing: clamp(2px, 0.0298rem + 0.4759vw, 7.33px);
   text-transform: uppercase;
   color: rgba($text-color, .5);
@@ -121,7 +121,11 @@ body{
   overflow: hidden;
 }
 
-
+@media (min-width:1920px) {
+  .wrapper {
+     overflow: visible;
+  }
+}
 
 @media (min-width:1440px) {
   .title {
