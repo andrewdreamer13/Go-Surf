@@ -45,6 +45,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "gsap": "^3.12.7",
     "init-package-json": "^4.0.1",
     "inputmask": "^5.0.9",
     "luxon": "^3.4.4",

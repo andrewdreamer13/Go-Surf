@@ -7,3 +7,4 @@ import './_shop';
 import './_sleep';
 import './_modal';
 import './_date';
+import './_animation';
