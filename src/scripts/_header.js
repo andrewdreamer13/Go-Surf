@@ -37,9 +37,13 @@ const headerSlider = new Swiper(".header__slider", {
 
 const mapNorth = document.querySelector(".map-north");
 const navItems = document.querySelectorAll('.nav__item');
+const dateOuter = document.querySelector('.header__date-outer');
+
 
 window.addEventListener("load", () => {
+
   mapNorth.classList.add("map-visible");
+  dateOuter.classList.add('header__date-outer-active');
 
   navItems.forEach((item) => {
     item.classList.add('nav__item-active')
@@ -47,25 +51,7 @@ window.addEventListener("load", () => {
 
 });
 
-// headerSlider.on("paginationRender", function () {
-//   const mapRoads = document.querySelectorAll(".road");
-//   const bullets = document.querySelectorAll(".swiper-pagination-bullet");
-//   bullets.forEach((bullet) => {
-//     bullet.addEventListener("click", function (event) {
-//       const bulletIndex = event.currentTarget.getAttribute("data-index");
-//       mapRoads.forEach((road, index) => {
-//         if (index == bulletIndex) {
-//           // road.classList.add('road-active')
 
-//           //  // customFunction(road);
-//         }
-//       });
-//       console.log(`Bullet ${bulletIndex} clicked!`);
-//     });
-//   });
-// });
-
-// header burger menu
 burger();
 
 function burger() {

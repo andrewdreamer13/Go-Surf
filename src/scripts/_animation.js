@@ -2,7 +2,6 @@ import { gsap } from "gsap";
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-
   const titleFirstItems = document.querySelectorAll(".title__first");
   const titleSecondItems = document.querySelectorAll(".title__second");
 
@@ -31,65 +30,81 @@ document.addEventListener("DOMContentLoaded", (event) => {
     item.append(titleDecor);
   });
 
-    
-    // const titlesTl = gsap.timeline();
+  // const titlesTl = gsap.timeline();
 
-    titleFirstItems.forEach((item) => {
-      gsap.to(item.querySelectorAll("span"), {
-        scrollTrigger: {
-          trigger: item,
-          start: "top center", 
-        },
-        duration: 1.3,
-        opacity: 1,
-        y: 0,
-        x: 0,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-        repeat: 0,
-      });
+  titleFirstItems.forEach((item) => {
+    gsap.to(item.querySelectorAll("span"), {
+      scrollTrigger: {
+        trigger: item,
+        start: "top center",
+      },
+      duration: 1.3,
+      opacity: 1,
+      y: 0,
+      x: 0,
+      stagger: 0.1,
+      ease: "back.out(1.7)",
+      repeat: 0,
     });
+  });
 
-    titleSecondItems.forEach((item) => {
-      gsap.timeline({
+  titleSecondItems.forEach((item) => {
+    gsap
+      .timeline({
         scrollTrigger: {
           trigger: item,
-          start: "center center", 
+          start: "center center",
         },
       })
-      .to(item.querySelectorAll("span"), {
-        duration: 0.5,
-        opacity: 1,
-        y: 0,
-        x: 0,
-        repeat: 0,
-        ease: "back.out(1.7)",
-        stagger: {
-          each: 0.1,
-          from: "end",
+      .to(
+        item.querySelectorAll("span"),
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          x: 0,
+          repeat: 0,
+          ease: "back.out(1.7)",
+          stagger: {
+            each: 0.1,
+            from: "end",
+          },
         },
-      }, "+=0.7")
+        "+=0.7"
+      )
       .to(item.querySelector(".title__second-line"), {
         duration: 0.5,
         scale: 1,
         ease: "back.out(1.7)",
       });
+  });
+
+  const overlays = document.querySelectorAll(".slider-overlay");
+
+  overlays.forEach((overlay) => {
+    gsap.to(overlay, {
+      scrollTrigger: {
+        trigger: overlay,
+        start: "top center",
+      },
+      duration: 3,
+      opacity: 0,
     });
+  });
 
+  // const asideAimations = document.querySelectorAll(".aside-animate");
 
-    const overlays = document.querySelectorAll('.slider-overlay');
-
-    overlays.forEach((overlay) => {
-      gsap.to(overlay, {
-        scrollTrigger: {
-          trigger: overlay,
-          start: "top center", 
-        },
-       duration:3,
-       opacity:0
-      });
-    });
-       
+  // asideAimations.forEach((item) => {
+  //   gsap.to(item, {
+  //     duration: 1,
+  //     delay: 1,
+  //     y: 0,
+  //     opacity:1,
+  //     ease: "power1.in",
+  //     stagger: {
+  //       each: 0.1,
+  //       from: "end",
+  //     },
+  //   });
+  // });
 });
-
-    
