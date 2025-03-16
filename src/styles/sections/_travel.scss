@@ -16,8 +16,6 @@
     width: 100%;
     margin-bottom: 100px;
     margin-bottom: clamp(25px, -0.142rem + 8.5227vw, 100px);
-    // height: 785px;
-    // aspect-ratio: 1.4 / 1;
 
     .swiper-slide {
       &-active {
@@ -37,7 +35,6 @@
           translate: 0 0 0;
           opacity: 1;
           transition: all 0.7s;
-          // transition-delay: .3s;
         }
 
         .travel__slider-bg-box {
@@ -61,18 +58,13 @@
     right: clamp(30px, 0.5114rem + 6.8182vw, 90px);
   }
 
-  &__slider-track {
-  }
-
   &__slider-slide {
     background-color: $bg-color;
   }
 
   &__slider-title-box {
     position: absolute;
-    // top: 76px;
     top: clamp(26px, 0.4886rem + 5.6818vw, 76px);
-    // right: 90px;
     right: clamp(30px, 0.5114rem + 6.8182vw, 90px);
     text-align: right;
     z-index: 2;
@@ -91,9 +83,7 @@
 
   &__slider-airline-box {
     position: absolute;
-    // left: 128px;
     left: clamp(30px, -0.3523rem + 11.1364vw, 128px);
-    // bottom: 34px;
     bottom: clamp(20px, 0.9318rem + 1.5909vw, 34px);
     z-index: 2;
 
@@ -111,10 +101,6 @@
         margin-right: 26px;
       }
     }
-  }
-
-  &__slider-airline-img {
-    // margin-left: 26px;
   }
 
   &__slider-bg-box {
@@ -158,7 +144,6 @@
     bottom: -68px;
     right: -50px;
     width: 100%;
-    // max-width: 750px;
     max-width: clamp(200px, 62.5vw, 750px);
     aspect-ratio: 3 / 1;
     z-index: 2;
@@ -169,7 +154,6 @@
 
   &__slider-airplane {
     width: 100%;
-    // height: 100%;
   }
 
 		&__info {
@@ -185,10 +169,7 @@
 
 		&__info-item {
       @include flex-mix(space-between, flex-start, row, 18);
-      // flex-wrap: wrap;
 
-
-      // border:1px solid red;
 		}
 
 		&__info-title {
@@ -203,7 +184,6 @@
 
     &__info-text-box {
       width: 100%;
-      // border:1px solid red;
     }
 
 		&__info-text {
@@ -228,8 +208,6 @@
       &__book-flight {
         position: relative;
         margin: 0 auto;
-        // width: 100%;
-        // max-width: 326px;
         width: clamp(225px, 11.767rem + 11.4773vw, 326px);
         padding: 17px 10px 27px 0;
         @include flex-mix(flex-start,center, row, 16);
@@ -248,7 +226,6 @@
       }
   
       &__book-flight-text-box {
-        // width: 100%;
         max-width: 268px;
         position: relative;
         @include flex-mix(flex-start,center, row, 8);
@@ -293,19 +270,11 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .travel {
-    &__slider-bg-box {
-      // width: 80%;
-    }
-  }
-}
 
 @media (max-width: 950px) {
   .travel {
     &__slider-bg-box {
       height: 670px;
-      // min-height: 100dvh;
       aspect-ratio: 1 / 1;
     }
   }
@@ -333,15 +302,10 @@
     &__info {
       @include flex-mix(center, flex-start, row, 40);
       max-width: 460px;
-      border:1px solid red;
 		}
 
     &__info-item {
       min-width: 190px;
-    }
-
-    &__info-text {
-      // text-align: right;
     }
 
     &__info-trip {

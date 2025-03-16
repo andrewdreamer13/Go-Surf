@@ -23,9 +23,6 @@
     margin-bottom: 100px;
     margin-bottom: clamp(25px, -0.142rem + 8.5227vw, 100px);
 
-    // height: 785px;
-    // aspect-ratio: 1.4 / 1;
-
     .swiper-slide {
       &-active {
         .sleep__slider-title {
@@ -227,7 +224,6 @@
 
   &__info-text-box {
     width: 100%;
-    // border:1px solid red;
   }
 
   &__info-text {
@@ -237,7 +233,6 @@
     line-height: 0.9;
     letter-spacing: 0.8px;
     transition: all 0.3s;
-    // @include flex-mix(flex-end, center, row);
   }
 
   &__info-trip {
@@ -285,7 +280,6 @@
   &__book-flight {
     position: relative;
     margin: 0 auto;
-    // width: 100%;
     max-width: 326px;
     width: clamp(200px, 10.3864rem + 10.5682vw, 293px);
     padding: 17px 10px 27px 0;
@@ -296,7 +290,6 @@
       position: absolute;
       top: 0;
       right: 0;
-      // width: 204px;
       width: clamp(122px, 6.5795rem + 5.2273vw, 168px);
       height: 100%;
       background-color: $main-color;
@@ -305,7 +298,6 @@
   }
 
   &__book-flight-text-box {
-    // width: 100%;
     max-width: 268px;
     position: relative;
     @include flex-mix(flex-start, center, row, 8);
@@ -344,19 +336,10 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .sleep {
-    &__slider-bg-box {
-      // width: 80%;
-    }
-  }
-}
-
 @media (max-width: 950px) {
   .sleep {
     &__slider-bg-box {
       height: 670px;
-      // min-height: 100dvh;
       aspect-ratio: 1 / 1;
     }
     &__slider-decor {
@@ -406,10 +389,6 @@
 
     &__info-item {
       min-width: 190px;
-    }
-
-    &__info-text {
-      // text-align: right;
     }
 
     &__info-buttons {

@@ -5,18 +5,9 @@ const surfSlider = new Swiper(".surf__slider", {
   spaceBetween: 0,
   loop: true,
   slidesPerView: 'auto',
-  // slideActiveClass: 2,
-  //
   initialSlide: 6,
-  // slideToClickedSlide: true,
   centeredSlides: true,
-  // parallax: true,
   speed: 700,
-
-  // pagination: {
-  //   el: ".header__pagination",
-  //   clickable: true,
-  // },
 
   navigation: {
     nextEl: ".surf__slider-next",
@@ -173,8 +164,6 @@ renderPopup();
 
 surfSlider.on("slideChange", () => {
   const currentIndex = surfSlider.realIndex;
-
-  //  console.log(currentIndex);
   
 });
 

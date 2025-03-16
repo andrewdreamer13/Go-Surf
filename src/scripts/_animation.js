@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     item.append(titleDecor);
   });
 
-  // const titlesTl = gsap.timeline();
 
   titleFirstItems.forEach((item) => {
     gsap.to(item.querySelectorAll("span"), {
@@ -92,19 +91,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
-  // const asideAimations = document.querySelectorAll(".aside-animate");
-
-  // asideAimations.forEach((item) => {
-  //   gsap.to(item, {
-  //     duration: 1,
-  //     delay: 1,
-  //     y: 0,
-  //     opacity:1,
-  //     ease: "power1.in",
-  //     stagger: {
-  //       each: 0.1,
-  //       from: "end",
-  //     },
-  //   });
-  // });
+  
 });

@@ -1,17 +1,15 @@
 .weather-forcast {
-  
   width: 100%;
   max-width: 283px;
-  padding:28px 32px;
+  padding: 28px 32px;
   border-radius: 6px;
   background-color: $weather-bg;
   z-index: 10;
   opacity: 0;
   @include flex-mix(space-between, center, column, 20);
-  
+
   &-visible {
     opacity: 1;
-    
     transition: opacity 1s;
     transition-delay: 0.3s;
   }
@@ -29,7 +27,7 @@
     margin-bottom: 16px;
     font-weight: 800;
     font-size: 18px;
-  //  line-height: 1;
+    //  line-height: 1;
 
     &::after {
       content: "";
@@ -49,19 +47,13 @@
     text-transform: capitalize;
   }
 
-  &__link {
-    // border:1px solid red;
-    // padding: 5px 8px;
-  }
-
   &__svg {
     fill: $text-color;
-    transition: all .3s;
+    transition: all 0.3s;
 
     .weather-forcast__link:hover & {
       fill: $main-color;
     }
-   
   }
 
   &__data {
@@ -82,7 +74,7 @@
     font-weight: 800;
     font-size: 16px;
     line-height: 1.4375;
-    text-transform:lowercase
+    text-transform: lowercase;
   }
 
   &__item-names {
@@ -92,20 +84,16 @@
   }
 }
 
-@media (min-width: 1440px) {
-
-}
-
 @media (max-width: 1024px) {
   .weather-forcast {
-    padding:10px 12px;
+    padding: 10px 12px;
     max-width: 234px;
   }
 }
 
 @media (max-width: 768px) {
   .weather-forcast {
-    padding:10px 12px;
+    padding: 10px 12px;
     max-width: 210px;
     gap: 10px;
 
@@ -116,21 +104,12 @@
     &__shore {
       margin-bottom: 8px;
       font-size: 16px;
-  
+
       &::after {
         content: "";
         bottom: -3px;
         width: 70px;
       }
+    }
   }
-  
-  }
-}
-
-@media (max-width: 480px) {
-  .weather-forcast {
-
-   
-  }
-
 }

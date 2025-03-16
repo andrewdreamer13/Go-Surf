@@ -18,7 +18,6 @@ openModalWindows();
       closeButtons.forEach((button) => {
         button.addEventListener('click', () => {
           modalWindow.classList.remove('modal-window--visible');
-          // document.querySelector(`[data-modal-target="${path}"]`).classList.remove('visible');
           document.body.classList.remove('no-scroll');
         })
       });
@@ -36,5 +35,5 @@ openModalWindows();
 
  
   
-} // end of openModalWindows
+} 
 

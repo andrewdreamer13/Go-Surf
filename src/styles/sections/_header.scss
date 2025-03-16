@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   height: 100dvh;
- min-height: 1024px;
+  min-height: 1024px;
 
   &__slider {
     position: absolute;
@@ -36,17 +36,6 @@
       z-index: 0;
     }
   }
-  // .swiper {
-  //   .swiper-slide {
-  //     &-active {
-  //       .header__slide {
-  //         background-color: $bg-color;
-  //         background-size: 100%;
-  //         transition: all 0.7s;
-  //       }
-  //     }
-  //   }
-  // }
 
   &__slide-map {
     position: absolute;
@@ -70,7 +59,7 @@
   &__slide-subtitle {
     margin-bottom: 10px;
     letter-spacing: 15px;
-     opacity: 0;
+    opacity: 0;
   }
 
   &__slide-title {
@@ -79,7 +68,7 @@
     line-height: 1.1;
     text-transform: uppercase;
     margin-bottom: 27px;
-    scale:2;
+    scale: 2;
     opacity: 0;
   }
 
@@ -119,35 +108,34 @@
       &-active {
         .header__slide-content {
           .header__slide-title {
-            transition: all .6s;
-             scale:1;
-             opacity: 1;
-           }
-   
-           .header__slide-subtitle {
-             transition: all .5s;
-             transition-delay: .4s ;
-             letter-spacing: clamp(2px, 0.0298rem + 0.4759vw, 7.33px);
-             opacity: 1;
-             translate: 0 0 0;
-            }
+            transition: all 0.6s;
+            scale: 1;
+            opacity: 1;
+          }
 
-           .header__slide-text {
-            transition: all .5s;
-            transition-delay: .2s ;
+          .header__slide-subtitle {
+            transition: all 0.5s;
+            transition-delay: 0.4s;
+            letter-spacing: clamp(2px, 0.0298rem + 0.4759vw, 7.33px);
+            opacity: 1;
+            translate: 0 0 0;
+          }
+
+          .header__slide-text {
+            transition: all 0.5s;
+            transition-delay: 0.2s;
             letter-spacing: 0;
             opacity: 1;
           }
 
           .header__slide-link {
             animation-name: move-link;
-            animation-duration: .7s;
-            animation-delay: .4s;
+            animation-duration: 0.7s;
+            animation-delay: 0.4s;
             animation-iteration-count: 1;
-            animation-timing-function:ease-in-out;
+            animation-timing-function: ease-in-out;
           }
         }
-        
       }
     }
   }
@@ -169,7 +157,6 @@
       translate: 0 0 0;
     }
   }
-
 
   &__slider-control {
     position: absolute;
@@ -355,7 +342,6 @@
   &__date {
     margin-bottom: 25px;
     @include flex-mix(space-between, center, column);
-    
   }
 
   &__date-day {
@@ -402,7 +388,6 @@
   &__marker-svg {
     width: 11px;
     height: 13px;
-    // stroke: $text-color;
     fill: $text-color;
   }
 
@@ -437,15 +422,6 @@
     transition-delay: 1.5;
   }
 
-  .map-south {
-  }
-
-  .map-west {
-  }
-
-  .map-east {
-  }
-
   .map-visible {
     opacity: 1;
     transition: all 1s;
@@ -469,16 +445,6 @@
 .aside-animate {
   transform: translateY(-1000px);
   opacity: 0;
-}
-
-
-.road-north {
-}
-.road-south {
-}
-.road-west {
-}
-.road-east {
 }
 
 @keyframes road-start {
@@ -516,16 +482,13 @@
 
 @media (max-width: 1024px) {
   .header {
-    //   height: 870px;
-    height: 100dvh;
-    // min-height: 100vh;
+    height: 870px;
+    min-height: 100vh;
     min-height: 700px;
 
     &__slide {
-      //  height: 870px;
-      height: 100dvh;
-      // min-height: 100vh;
-      min-height: 700px;
+      height: 870px;
+      min-height: 100vh;
     }
 
     &__slide-map {
@@ -615,9 +578,6 @@
       border-right: none;
     }
 
-    &__search {
-    }
-
     &__logo {
       margin-bottom: 12px;
     }
@@ -653,13 +613,15 @@
 
 @media (max-width: 480px) {
   .header {
+    height: 100dvh;
     &__slide-content {
       margin-bottom: 100px;
     }
+    &__slide {
+      height: 100dvh;
+    }
     &__aside {
       max-width: 85px;
-      // justify-content: start;
-      // height: 67%;
     }
 
     &__logo {
@@ -737,7 +699,7 @@
       transition: translate 0.5s;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: calc(-100vw + 85px);
@@ -746,7 +708,6 @@
         background-color: transparent;
       }
     }
-
 
     &__slide-map {
       transform: translate(27%, -105%);

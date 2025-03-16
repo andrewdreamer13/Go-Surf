@@ -1,4 +1,26 @@
-footer h2 {
-  font-size: 22px;
-  text-align: center;
+.footer {
+  width: 100%;
+  padding-top: clamp(40px, -0.5769rem + 15.3846vw, 160px);
+  padding-bottom: 34px;
+ @include flex-mix(center,center,column);
+
+ .order-link::after {
+  width: clamp(120px, 6.4091rem + 5.4545vw, 168px);
+  }
+ 
+
+  &__link {
+    position: relative;
+    margin: 0 auto 27px;
+   
+  }
+
+  &__info {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.09em;
+    
+    color: rgba($text-color, 0.5);
+  }
 }
